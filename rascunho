@@ -6,3 +6,9 @@ https://lucide.dev/packages
 npm install lucide-react
 
 -
+
+Ctrl + Shift + p 
+  digita: >reload
+reinicia o VScode
+
+-
