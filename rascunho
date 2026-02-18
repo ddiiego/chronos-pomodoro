@@ -24,3 +24,6 @@ Para mudar todas as palvras do codigo.
 
 git add index.html - para add um arquivi especifico.
 git add index.html style.css script.js - add mais de um especifico.
+
+git restore --staged . - para remover tudo que foi add .
+git restore --staged index.html - para remover aquivo especifico de add
