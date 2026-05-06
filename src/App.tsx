@@ -1,46 +1,26 @@
+import { Home } from './pages/Home';
+
 import './styles/theme.css';
 import './styles/global.css';
+import type { TaskStateModel } from './models/TaskStateModel';
+import { useState } from 'react';
 
-import { Container } from './components/Conteiner';
-import { Logo } from './components/Logo';
-import { Menu } from './components/Menu';
-import { CountDown } from './components/CountDown';
+const initialStatus: TaskStateModel = {
+  tasks: [],
+  secondsRemaining: 0,
+  formettedSecondsRemaining: '00:00',
+  activeTask: null,
+  currentCycle: 0,
+  config: {
+    workTime: 25,
+    shortBraekTime: 5,
+    longBreakTime: 15,
+  },
+
+};
 
 export function App() {
-  return (<>
-      <Container>
-        <Logo />
-      </Container>
+  const [state, setState] = useState(initialStatus);
 
-      <Container>
-        <Menu />
-      </Container>
-
-       <Container>
-        <CountDown/>
-      </Container>
-
-      <Container>
-        <form className='form' action="">
-          <div className='formRow'>
-            <label htmlFor="meuInput">task</label>
-            <input id='meuInput' type="text" />
-          </div>
-
-          <div className='formRow'>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-
-          <div className='formRow'>
-            <p>Ciclos</p>
-            <p>0 0 0 0 0 0 0</p>
-          </div>
-
-          <div className='formRow'>
-            <button>Enviar</button>
-          </div>
-        </form>
-      </Container>
-    </>
-  );
+  return <Home />;
 }
